@@ -1,0 +1,97 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body{
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #a4c439;
+}
+.head{
+  width: 8rem;
+  height: 7rem;
+  border-radius: 50%;
+  background: linear-gradient(#fff 50%,
+  transparent 50%);
+  position: relative;
+}
+.earR,.earL{
+  position: absolute;
+  width: 0.3rem;
+  height: 2rem;
+  background: #fff;
+  top: -1rem;
+  left: 1rem;
+  transform: rotate(-50deg);
+}
+.earR{
+  left: unset;
+  right: 1rem;
+  transform: rotate(50deg);
+}
+.head::before,.head::after{
+  content: '';
+  position: absolute;
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background: #a4c439;
+  top: 1rem;
+  left: 2rem;
+  animation: blink 1s linear infinite alternate-reverse;
+}
+.head::after{
+  left: unset;
+  right: 2rem;
+}
+@keyframes blink {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+.body{
+  position: relative;
+  transform: translateY(-3rem);
+  background: #fff;
+  width: 8rem;
+  height: 6rem;
+  border-radius: 0 0 1rem 1rem;
+  animation: dance 2s linear infinite alternate-reverse;
+}
+
+
+.body::before,.body::after{
+  content: '';
+  position: absolute;
+  background: #fff;
+  width: 2rem;
+  height: 6rem;
+  left: -2.5rem;
+  border-radius: 1rem;
+}
+.body::after{
+  left: unset;
+  right: -2.5rem;
+}
+.leg{
+  background: #fff;
+  bottom: -3rem;
+  left: 1rem;
+  width: 2rem;
+  height: 6rem;
+  border-radius: 1rem;
+  position: absolute;
+}
+.leg::after{
+  content: '';
+  position: absolute;
+  left: 4rem;
+  width: 2rem;
+  height: 6rem;
+  border-radius: 1rem;
+  background: #fff;
+}
